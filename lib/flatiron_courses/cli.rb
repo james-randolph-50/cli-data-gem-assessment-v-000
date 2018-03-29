@@ -31,5 +31,17 @@ class FlatironCourses::CLI
     input = gets.strip
     if input == "list"
       list 
-      
+    elsif input.to_i == 0
+      if course = FlatironCourses::Course.find_by_name(input)
+        show_course(course)
+      end
+    elsif input.to_i > 0
+    if course = FlatironCourses::Course.find(input.to_i)
+      show_course(course)
+    end
+  end
+end
+puts "Program ended"
+end
+end 
     

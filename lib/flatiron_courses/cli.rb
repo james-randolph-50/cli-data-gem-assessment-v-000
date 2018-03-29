@@ -12,3 +12,10 @@ class FlatironCourses::CLI
     end
   end
   
+  
+  def show_course(course)
+    puts "#{course.name}"
+    puts "#{course.duration}"
+    puts "#{course.description}"
+  end
+    

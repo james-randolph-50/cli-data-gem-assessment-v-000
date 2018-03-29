@@ -21,3 +21,23 @@ class FlatironCourses::Course
     end
   end
   
+  def self.scrape_flatiron_courses
+    courses = []
+    
+    courses << self.scrape_flatiron
+    
+    courses
+  end
+  
+  def scrape_flatiron
+    doc = Nokogiri::HTML(open(https://flatironschool.com/our-courses/))
+    
+    course = self.new
+    course.name = doc.search("div.heading heading--level-2 heading--level-2--no-flex").text.strip
+    course.duration = doc.search("h6.heading heading--level-6 heading--level-6--color-grey-dark util__margin-ntxs").text.strip
+    course.summary = doc.search("div.text-block p")
+    
+    course
+  end
+  
+end

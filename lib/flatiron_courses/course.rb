@@ -30,24 +30,21 @@ class FlatironCourses::Course
     courses
   end
   
-  def scrape_flatiron
+  def self.scrape_flatiron
     doc = Nokogiri::HTML(open("https://flatironschool.com/our-courses/"))
     
     
     courses = doc.search("div.module_body")
       
-    if courses.doc.search("a.button.button--color-blue-inverted.button--size-small") do
+  #  if courses.doc.search("a.button.button--color-blue-inverted.button--size-small") do
        courses.each do |new_course|
             new_course = self.new
             course.name = new_course.search("div.heading heading--level-2 heading--level-2--no-flex").text.strip
             course.duration = new_course.search("h6.heading heading--level-6 heading--level-6--color-grey-dark util__margin-ntxs").text.strip
-            course.summary = new_course.search("div.text-block p")
+            course.summary = new_course.search("div.text-block p").text.strip
     
       course
     end
-      else
-    end
-  end
     
   end
   

@@ -34,8 +34,8 @@ class FlatironCourses::Course
     doc = Nokogiri::HTML(open("https://flatironschool.com/our-courses/"))
     
     
-    courses = doc.search("div.module_body")
-      
+    courses = doc.search("ul.list.list--separators.list--separators--top.list--separators--color-grey-faint.list--spacing-flex-large")
+      binding.pry
   #  if courses.doc.search("a.button.button--color-blue-inverted.button--size-small") do
        courses.each do |new_course|
             new_course = self.new

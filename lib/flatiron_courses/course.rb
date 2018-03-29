@@ -38,8 +38,8 @@ class FlatironCourses::Course
       
   #  if courses.doc.search("a.button.button--color-blue-inverted.button--size-small") do
        courses.each do |new_course|
-            new_course = self.new
-            new_course.name = courses.search("div.heading.heading--level-2.heading--level-2--no-flex").text.strip
+            course = self.new
+            course.name = new_course.search("div.heading.heading--level-2.heading--level-2--no-flex").text.strip
             binding.pry
             course.duration = new_course.search("h6.heading heading--level-6 heading--level-6--color-grey-dark util__margin-ntxs").text.strip
             course.summary = new_course.search("div.text-block p").text.strip

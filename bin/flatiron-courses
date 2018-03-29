@@ -1,5 +1,6 @@
 #!/usr/bin/env ruby
 
-require_relative '../lib/flatiron_courses'
+require "bundler/setup"
+require 'flatiron_courses'
 
 Flatiron-Courses::CLI.new.call

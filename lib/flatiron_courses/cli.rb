@@ -7,7 +7,7 @@ class FlatironCourses::CLI
   def list
     puts "See courses offered by the Flatiron School."
     puts ""
-    FlatironCourses::COurse.all.each.with_index(1) do |course, i |
+    FlatironCourses::Course.all.each.with_index(1) do |course, i |
       puts "#{i}. #{course.name}"
     end
   end

@@ -18,4 +18,18 @@ class FlatironCourses::CLI
     puts "#{course.duration}"
     puts "#{course.description}"
   end
+  
+  def start
+    list
+    input = nil 
+    while input != "exit"
+    
+    puts "Which course would you like more info on? (Name or Number)"
+    puts "Type 'list' to see all courses."
+    puts "Type 'exit' to close the app."
+    
+    input = gets.strip
+    if input == "list"
+      list 
+      
     

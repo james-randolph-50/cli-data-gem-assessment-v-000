@@ -21,14 +21,6 @@ class FlatironCourses::Course
     end
   end
   
-#  def self.scrape_flatiron_courses
-    
- #   courses = []
-    
-  #  courses << self.scrape_flatiron
-    
-   # courses
-#  end
   
   def self.scrape_flatiron
     doc = Nokogiri::HTML(open("https://flatironschool.com/our-courses/"))

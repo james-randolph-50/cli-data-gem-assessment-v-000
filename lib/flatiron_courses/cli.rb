@@ -21,8 +21,31 @@ class FlatironCourses::CLI
   end
   
   def start
+    
+    puts ""
+    puts "what number courses would you like to see? 1-5, 6-10, 11-15"
+    input = gets.strip.to_i
+    
+    FlatironCourses::Scraper.scrape_flatiron(input)
+    
+    puts ""
+    puts "Which course would you like more info on?"
+    input = gets.strip
+    
+    course = FlatironCourses::Course.find(input.to_i)
+    
+    print_courses(course)
+    
+    puts ""
+    puts "Would you like to see another restaurant? Enter Y or N"
+    
+    input = gets.strip.downcase
+    
+  end
+    FlatironCourses::Scraper.scrape_flatiron
     list
-    input = nil 
+    
+    input = nil
     while input != "exit"
     
     puts "Which course would you like more info on? (Name or Number)"
@@ -46,3 +69,6 @@ puts "Program ended"
 end
 end 
     
+    
+    
+    # 1 - 5, more 6-10, etc...

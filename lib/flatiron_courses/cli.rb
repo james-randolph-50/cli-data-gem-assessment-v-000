@@ -20,7 +20,7 @@ class FlatironCourses::CLI
     
     course = FlatironCourses::Course.find(input.to_i)
     
-    show_courses(course)
+    show_course(course)
     
     puts ""
     puts "Would you like to see another course? Enter Y or N"

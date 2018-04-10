@@ -1,7 +1,7 @@
 class FlatironCourses::CLI
   
   def call
-    FlatironCourses::Scraper.new.scrape_flatiron
+    FlatironCourses::Scraper.scrape_flatiron
     puts "See classes offered by the Flatiron Coding School."
     start
   end
@@ -12,7 +12,7 @@ class FlatironCourses::CLI
     puts "what number courses would you like to see? 1-5, 6-10, 11-15"
     input = gets.strip.to_i
     
-    FlatironCourses::Scraper.scrape_flatiron(input)
+    show_courses(input)
     
     puts ""
     puts "Which course would you like more info on?"
@@ -23,22 +23,21 @@ class FlatironCourses::CLI
     show_courses(course)
     
     puts ""
-    puts "Would you like to see another restaurant? Enter Y or N"
+    puts "Would you like to see another course? Enter Y or N"
     
     input = gets.strip.downcase
+    
     if input == "y"
       start
     elsif input == "n"
-    puts ""
-    puts "Thank you."
-    exit
-  else
-    puts "Please type 'Y' or 'N'."
-    start
+      puts ""
+      puts "Thank you."
+      exit
+     else
+      puts "Please type 'Y' or 'N'."
+      start
   end
-  
-      
-    
+end
   
     
   def list
@@ -62,7 +61,11 @@ class FlatironCourses::CLI
     puts ""
     puts " Courses #{from_number} through #{from_number+4}"
     puts ""
-    
+    FlatironCourses::Course.all[from_number-1, 5].each.with_index(from_number) do |course, index|
+      puts "#{index}. #{course.name}"
+    end
+  end
+end
     
     
     

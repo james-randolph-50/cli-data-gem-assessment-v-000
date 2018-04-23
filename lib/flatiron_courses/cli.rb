@@ -50,7 +50,7 @@ class FlatironCourses::CLI
       puts "Please type 'Y' or 'N'."
       sequence
   end
-end
+
 end
   
     

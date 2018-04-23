@@ -24,8 +24,6 @@ class FlatironCourses::CLI
       show_courses(input)
     end
     
-  end
-    
     puts ""
     puts "Which course would you like more info on?"
     input = gets.strip

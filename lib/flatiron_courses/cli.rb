@@ -22,6 +22,7 @@ class FlatironCourses::CLI
       sequence
     else
       show_courses(input)
+      information
     end
   end
   

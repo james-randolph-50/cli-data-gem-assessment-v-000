@@ -36,6 +36,8 @@ class FlatironCourses::CLI
     show_course(course)
     
   end
+  
+  def repeat
     
     puts ""
     puts "Would you like to see another course? Enter Y or N"

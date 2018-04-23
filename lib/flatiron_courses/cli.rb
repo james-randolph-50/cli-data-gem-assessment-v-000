@@ -23,6 +23,9 @@ class FlatironCourses::CLI
     else
       show_courses(input)
     end
+  end
+  
+  def information
     
     puts ""
     puts "Which course would you like more info on?"
@@ -47,6 +50,7 @@ class FlatironCourses::CLI
       puts "Please type 'Y' or 'N'."
       sequence
   end
+end
 end
   
     

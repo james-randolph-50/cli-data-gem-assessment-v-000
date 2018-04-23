@@ -55,6 +55,7 @@ class FlatironCourses::CLI
       sequence
   end
 end
+end
   
     
   def list

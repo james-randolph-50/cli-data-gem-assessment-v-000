@@ -26,7 +26,6 @@ class FlatironCourses::CLI
     
   end
     
-  def info  
     puts ""
     puts "Which course would you like more info on?"
     input = gets.strip
@@ -34,10 +33,6 @@ class FlatironCourses::CLI
     course = FlatironCourses::Course.find(input.to_i)
     
     show_course(course)
-    
-  end
-  
-  def repeat
     
     puts ""
     puts "Would you like to see another course? Enter Y or N"
@@ -54,7 +49,6 @@ class FlatironCourses::CLI
       puts "Please type 'Y' or 'N'."
       sequence
   end
-
 end
   
     

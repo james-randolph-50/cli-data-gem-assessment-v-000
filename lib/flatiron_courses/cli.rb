@@ -2,17 +2,27 @@ class FlatironCourses::CLI
   
   def call
     FlatironCourses::Scraper.scrape_flatiron
-    puts "See classes offered by the Flatiron Coding School."
+    
     start
   end
   
   def start
     
+    puts "See classes offered by the Flatiron Coding School."
     puts ""
-    puts "what number courses would you like to see? 1-5, 6-10, 11-15"
+    sequence
+  end
+  
+  def sequence
+    puts "What number courses would you like to see? 1-5, 6-10, 11-15"
     input = gets.strip.to_i
     
-    show_courses(input)
+    if input > FlatironCourses::Course.all.count
+      puts "We don't have that many."
+      sequence
+    else
+      show_courses(input)
+    end
     
     puts ""
     puts "Which course would you like more info on?"
@@ -35,7 +45,7 @@ class FlatironCourses::CLI
       exit
      else
       puts "Please type 'Y' or 'N'."
-      start
+      sequence
   end
 end
   
